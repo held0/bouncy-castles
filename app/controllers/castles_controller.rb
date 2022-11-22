@@ -11,10 +11,10 @@ class CastlesController < ApplicationController
   end
 
   def create
-    @castle = Castle.new(castle_params)
-    @castle.user = current_user if user_signed_in?
-    if @castle.save
-      redirect_to castle_path(@castle)
+    castle = Castle.new(castle_params)
+    castle.user = current_user if user_signed_in?
+    if castle.save
+      redirect_to castle_path(castle)
     else
       render :new, status: :unprocessable_entity
     end
