@@ -12,7 +12,7 @@ class CastlesController < ApplicationController
 
   def create
     @castle = Castle.new(castle_params)
-    raise
+    @castle.user = current_user if user_signed_in?
     if @castle.save
       redirect_to castle_path(@castle)
     else
