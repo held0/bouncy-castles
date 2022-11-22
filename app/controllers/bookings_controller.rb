@@ -24,6 +24,7 @@ class BookingsController < ApplicationController
   def update
     @booking = Booking.find(params[:id])
     @booking.update(booking_params)
+    @castle = Castle.find(params[:castle_id])
     redirect_to castle_path(@castle)
   end
 
