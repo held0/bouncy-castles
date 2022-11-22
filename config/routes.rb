@@ -16,5 +16,7 @@ Rails.application.routes.draw do
   resources :castles, only: [:index, :show, :new, :create] do
     resources :bookings, only: [:new, :create, :edit, :update]
   end
-  resources :bookings, only: [:destroy]
+  # Usually we dont nest edit, update, show and destroy
+  # Do it when we still have time
+  # resources :bookings, only: [:destroy]
 end
