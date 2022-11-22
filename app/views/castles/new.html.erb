@@ -1,2 +1,8 @@
 <h1>Castles#new</h1>
 <p>Find me in app/views/castles/new.html.erb</p>
+<!-- app/views/articles/_form.html.erb -->
+<%= simple_form_for(article) do |f| %>
+  <!-- [...] -->
+  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+  <!-- [...] -->
+<% end %>

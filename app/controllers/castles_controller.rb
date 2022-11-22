@@ -12,4 +12,10 @@ class CastlesController < ApplicationController
 
   def create
   end
+
+  private
+
+  def castle_params
+    params.require(:castle).permit(:name, :location, :description, :price, photos: [])
+  end
 end
