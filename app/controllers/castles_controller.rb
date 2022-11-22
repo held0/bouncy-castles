@@ -7,6 +7,7 @@ class CastlesController < ApplicationController
   end
 
   def new
+    @castle = Castle.new
   end
 
   def create
