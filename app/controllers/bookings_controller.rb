@@ -17,14 +17,19 @@ class BookingsController < ApplicationController
   end
 
   def edit
+    @booking = Booking.find(params[:id])
+    @castle = Castle.find(params[:castle_id])
   end
 
   def update
+    @booking.update(booking_params)
+    raise
+    redirect_to castle_path(@castle)
   end
 
   private
 
   def booking_params
-    params.require(:booking).permit(:comment, :date_from, :date_to, :user_id, :castle_id)
+    params.require(:booking).permit(:comment, :date_from, :date_to, :user_id, :castle_id, :accepted)
   end
 end

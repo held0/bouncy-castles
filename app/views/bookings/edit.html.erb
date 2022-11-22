@@ -1,2 +1,8 @@
-<h1>Bookings#edit</h1>
-<p>Find me in app/views/bookings/edit.html.erb</p>
+<h1>Booking for <%= @castle.name %></h1>
+<p><%= @booking.user.first_name %> <%= @booking.user.last_name %></p>
+<p>Wants to book your bouncy castle from <%= @booking.date_from %> to <%= @booking.date_to %></p>
+<p>Please decide if you want to accept or decline the booking:</p>
+<%= simple_form_for [@castle, @booking] do |f| %>
+  <%= f.input :accepted %>
+  <%= f.submit %>
+<% end %>
