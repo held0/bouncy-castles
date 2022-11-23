@@ -1,2 +1,11 @@
-<%= render "shared/bookingform", locals: {castle: @castle, booking: @booking}  %>
-
+<%#= render "shared/bookingform", locals: {castle: @castle, booking: @booking}  %>
+<div class="container mt-5">
+  <div class="bg-white rounded p-3 shadow">
+    <%= simple_form_for [@castle, @booking] do |f| %>
+      <%= f.input :comment %>
+      <%= f.input :date_from %>
+      <%= f.input :date_to %>
+      <%= f.submit %>
+    <% end %>
+  </div>
+</div>

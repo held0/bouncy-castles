@@ -9,7 +9,7 @@ class BookingsController < ApplicationController
     booking = Booking.new(booking_params)
     booking.castle = castle
     booking.user = current_user if user_signed_in?
-    if booking.save
+    if booking.save!
       redirect_to castle_booking_path(castle, booking)
     else
       render :new, status: :unprocessable_entity
