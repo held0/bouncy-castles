@@ -1,10 +1,21 @@
 <div class="container">
   <h1><%= @castle.name %></h1>
   <p>Location: <%= @castle.location %></p>
-  <p>Price: <%= @castle.price %></p>
+  <p>Price: <%= @castle.price %>€</p>
 
-  <% @castle.photos.each do |photo| %>
-    <%= cl_image_tag photo.key,
-        width: 400, height: 300, crop: :fill %>
-  <% end %>
+  <div class="row">
+    <div class="col-lg-6">
+      <% @castle.photos.each do |photo| %>
+        <%= cl_image_tag photo.key,
+            width: 400, height: 300, crop: :fill %>
+      <% end %>
+    </div>
+    <div class="col-lg-6">
+      <div style="width: 582px; height: 300px;"
+      data-controller="map"
+      data-map-marker-value="<%= @marker.to_json %>"
+      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+    </div>
+  </div>
+
 </div>
