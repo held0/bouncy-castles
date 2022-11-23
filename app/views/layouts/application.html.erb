@@ -14,7 +14,7 @@
   <body>
 
 
-  <nav class="navbar navbar-expand-lg">
+  <nav class="navbar navbar-expand-lg sticky-top bg-white my-2">
     <div class="container-fluid">
 
         <%= link_to root_path do %>
@@ -23,7 +23,7 @@
 
       <ul class="navbar-nav mb-2 mb-lg-0">
         <li class="nav-item">
-        <%= link_to "Bouncy Castles", root_path, class: "nav-link py-2 px-0 px-lg-2" %>
+        <%= link_to "Bouncy Castles", root_path, class: "nav-link py-2 px-0 px-lg-2 fw-bold" %>
         </li>
       </ul>
 
@@ -31,17 +31,18 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarScroll">
-        <form class="d-flex  m-auto" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+
+        <form class="input-group m-auto w-50" role="search">
+          <input class="form-control" type="search" placeholder="Search" aria-label="Search">
           <button type="submit" class="btn btn-outline-secondary">Search</button>
         </form>
 
         <ul class="navbar-nav mb-2 mb-lg-0">
-        <% if !current_user && !current_page?(new_user_session_path) %>
-          <li class="nav-item">
-            <%= link_to "Sign in", new_user_session_path, class: "nav-link" %>
-          </li>
-        <% end %>
+          <% if !current_user && !current_page?(new_user_session_path) %>
+            <li class="nav-item">
+              <%= link_to "Sign in", new_user_session_path, class: "nav-link" %>
+            </li>
+          <% end %>
 
           <% if current_user %>
             <li class="nav-item">
