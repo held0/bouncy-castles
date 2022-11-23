@@ -9,7 +9,7 @@
 # migrations use external dependencies or application code.
 #
 # It's strongly recommended that you check this file into your version control system.
-
+# rubocop:disable Metrics/BlockLength
 ActiveRecord::Schema[7.0].define(version: 2022_11_22_132622) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,7 +21,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_22_132622) do
     t.bigint "blob_id", null: false
     t.datetime "created_at", null: false
     t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
+    # rubocop:disable Layout/LineLength
     t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
+    # rubocop:enable Layout/LineLength
   end
 
   create_table "active_storage_blobs", force: :cascade do |t|
@@ -85,3 +87,4 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_22_132622) do
   add_foreign_key "bookings", "users"
   add_foreign_key "castles", "users"
 end
+# rubocop:enable Metrics/BlockLength
