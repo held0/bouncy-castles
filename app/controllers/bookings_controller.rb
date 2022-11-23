@@ -10,10 +10,15 @@ class BookingsController < ApplicationController
     booking.castle = castle
     booking.user = current_user if user_signed_in?
     if booking.save
-      redirect_to castle_path(booking.castle)
+      redirect_to castle_booking_path(castle, booking)
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def show
+    @castle = Castle.find(params[:castle_id])
+    @booking = Booking.find(params[:id])
   end
 
   def edit
