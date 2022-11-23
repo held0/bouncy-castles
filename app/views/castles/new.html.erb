@@ -1,10 +1,12 @@
-<h1>Castles#new</h1>
-<p>Find me in app/views/castles/new.html.erb</p>
-<%= simple_form_for(@castle) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :location %>
-  <%= f.input :description %>
-  <%= f.input :price %>
-  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-  <%= f.submit %>
-<% end %>
+<div class="container mt-5">
+  <div class="bg-white rounded p-3 shadow">
+    <%= simple_form_for(@castle) do |f| %>
+      <%= f.input :name %>
+      <%= f.input :location %>
+      <%= f.input :description %>
+      <%= f.input :price %>
+      <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+      <%= f.submit %>
+    <% end %>
+  </div>
+</div>
