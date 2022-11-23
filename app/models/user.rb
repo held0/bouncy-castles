@@ -7,7 +7,6 @@ class User < ApplicationRecord
   # The castles a user booked
   has_many :castles, through: :bookings, dependent: :destroy
 
-
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
