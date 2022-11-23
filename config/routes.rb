@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   # root "articles#index"
   root to: 'castles#index'
   resources :castles, only: [:index, :show, :new, :create] do
-    resources :bookings, only: [:new, :create, :edit, :update]
+    resources :bookings, only: [:new, :show, :create, :edit, :update]
   end
   # Usually we dont nest edit, update, show and destroy
   # Do it when we still have time

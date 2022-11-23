@@ -16,9 +16,17 @@
 
   <nav class="navbar navbar-expand-lg">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">
-        <%= image_tag "Castle-Logo.png", width: 45, height: 39, alt: "Bouncy castle" %>
-      </a>
+
+        <%= link_to root_path do %>
+          <%= image_tag "Castle-Logo.png", width: 45, height: 39, alt: "Bouncy castle" %>
+        <% end %>
+
+      <ul class="navbar-nav mb-2 mb-lg-0">
+        <li class="nav-item">
+        <%= link_to "Bouncy Castles", root_path, class: "nav-link py-2 px-0 px-lg-2" %>
+        </li>
+      </ul>
+
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -27,20 +35,45 @@
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
           <button type="submit" class="btn btn-outline-secondary">Search</button>
         </form>
+
         <ul class="navbar-nav mb-2 mb-lg-0">
+        <% unless current_user %>
           <li class="nav-item">
-            <a class="nav-link" href="#">Sign in</a>
+            <%= link_to "Sign in", new_user_session_path, class: "nav-link" %>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Sign out</a>
-          </li>
+        <% end %>
+
+          <% if current_user %>
+            <li class="nav-item">
+              <%= link_to "Logout", destroy_user_session_path, data: { "turbo-method": :delete }, class: "nav-link" %>
+            </li>
+          <% end %>
+
+          <% unless current_user %>
+            <li class="nav-item">
+              <%= link_to "Sign up", new_user_registration_path, class: "nav-link" %>
+            </li>
+          <% end %>
+
         </ul>
       </div>
     </div>
   </nav>
 
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+  <% if notice %>
+    <div class="alert alert-success d-flex align-items-center" role="alert">
+      <div><%= notice %></div>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+  <% end %>
+
+  <% if alert %>
+    <div class="alert alert-danger d-flex align-items-center" role="alert">
+      <div><%= alert %></div>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+  <% end %>
+
   <%= yield %>
 
   <footer class="py-3 my-4">
