@@ -16,7 +16,7 @@
       <%= link_to(castle_path(castle)) do %>
         <div class="castle castle-overview">
           <div class="castle-img">
-            <%= cl_image_tag(castle.photo.key)%>
+            <%= cl_image_tag(castle.photos[0].key)%>
           </div>
           <h4><%= link_to castle.name, castle_path(castle), class: 'castle-link'%></h4>
         </div>
