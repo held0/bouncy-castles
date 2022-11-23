@@ -1,2 +1,10 @@
-<h1>Castles#show</h1>
-<p>Find me in app/views/castles/show.html.erb</p>
+<div class="container">
+  <h1><%= @castle.name %></h1>
+  <p>Location: <%= @castle.location %></p>
+  <p>Price: <%= @castle.price %></p>
+
+  <% @castle.photos.each do |photo| %>
+    <%= cl_image_tag photo.key,
+        width: 400, height: 300, crop: :fill %>
+  <% end %>
+</div>
