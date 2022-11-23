@@ -6,7 +6,7 @@ User.destroy_all
 
 puts "Seeding..."
 
-User.create(
+User.create!(
   first_name: "max",
   last_name: "Wuschko",
   email: "test@gmail.com",
@@ -34,7 +34,7 @@ img_array = ["https://www.alansbouncycastles.com/wp-content/uploads/2015/03/mari
     user_id: User.last.id
   )
   castle.photos.attach(io: file, filename: "castle.png", content_type: "image/png")
-  castle.save
+  castle.save!
 end
 
 puts "Seeding done."
