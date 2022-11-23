@@ -24,14 +24,14 @@ img_array = ["https://www.alansbouncycastles.com/wp-content/uploads/2015/03/mari
              "https://bouncycastlenetwork-res.cloudinary.com/image/upload/f_auto,q_auto,c_limit,w_900/be136c2b4c30a9f1888feb603968f32b",
              "https://img.freepik.com/free-photo/full-shot-kid-playing-bounce-house_23-2149551612.jpg?w=2000"]
 
-20.times do
+5.times do
   file = URI.open(img_array.sample)
   castle = Castle.new(
     name: Faker::Name.name,
-    location: Faker::Address.full_address,
+    location: "Fraunhoferstraße 6 80469 München Bavaria",
     description: Faker::TvShows::SouthPark.quote,
     price: Faker::Number.decimal(l_digits: 3, r_digits: 3),
-    user_id: 1
+    user_id: User.last.id
   )
   castle.photos.attach(io: file, filename: "castle.png", content_type: "image/png")
   castle.save
