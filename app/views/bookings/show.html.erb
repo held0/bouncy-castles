@@ -1,17 +1,20 @@
 <div class="container">
   <h2>Booking submitted!</h2>
-<div class="d-flex">
-  <div class="castle-confirm-img">
+  <div class="confirm-container">
     <%= cl_image_tag(@castle.photos[0].key)%>
+    <div class="confirm-content ml-2">
+      <h4>You booked: <h4>
+      <br>
+      <p> <%= @castle.name %> <p>
+      <p> from <%= @booking.date_from %> </p>
+      <p> to <%= @booking.date_to %> </p>
+      <br>
+      <br>
+      <br>
+      <p> Enjoy the Bouncy Castle Experience ! </p>
+    </div>
   </div>
-  <div class="bg-primary ml-2">
-  <h4>You booked <h4>
-  <p> <%= @castle.name %> <p>
-  <p> from <%= @booking.date_from %> to <%= @booking.date_to %> </p>
-  <p> Your comment:  <%= @booking.comment %></p>
-  </div>
-</div>
-  <p> Enjoy your Bouncy Castle Experience ! </p>
 </div>
 
-<%# <%= link_to "Overview of all your Bouncy Castle's  ", dashboard_path, class: "btn btn-primary"  %>
+
+<%# <%= link_to "Go to all your Bouncy Castle's  ", dashboard_path, class: "btn btn-primary"  %>
