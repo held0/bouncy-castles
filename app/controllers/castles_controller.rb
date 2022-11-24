@@ -3,16 +3,28 @@ class CastlesController < ApplicationController
 
   def index
     @castles = Castle.all
+    @markers = @castles.geocoded.map do |castle|
+      {
+        lat: castle.latitude,
+        lng: castle.longitude,
+        info_window: render_to_string(partial: "info_window", locals: {castle: castle})
+
+      }
+    end
   end
 
   def show
     @castle = Castle.find(params[:id])
-    @booking = Booking.new
+    castle_arr = [@castle]
+    @marker = castle_arr.map do |castle|
+      {
+        lat: castle.latitude,
+        lng: castle.longitude,
+        info_window: render_to_string(partial: "info_window", locals: {castle: castle})
 
-    @marker = {
-        lat: @castle.latitude,
-        lng: @castle.longitude
       }
+    end
+    @booking = Booking.new
   end
 
   def new
