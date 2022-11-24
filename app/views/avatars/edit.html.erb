@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="bg-white rounded p-3 shadow">
+    <%= simple_form_for(@user, url: avatar_update_path,
+        data: {turbo: false}) do |f| %>
+      <%= f.error_notification %>
+
+      <div class="form-inputs">
+        <%= f.file_field :avatar %>
+      </div>
+
+      <div class="form-actions d-grid gap-2">
+        <%= f.button :submit, "Add Photo", class: "btn btn-primary fw-semibold" %>
+      </div>
+    <% end %>
+  </div>
+</div>
