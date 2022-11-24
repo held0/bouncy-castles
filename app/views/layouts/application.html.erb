@@ -63,7 +63,7 @@
           <% end %>
 
           <% if current_user && current_user.avatar.attached?%>
-            <%= link_to avatar_edit_path, class: "nav-link" do%>
+            <%= link_to avatar_edit_path do%>
             <%= image_tag current_user.avatar, class: "rounded-circle", width: 40, height: 40  %>
             <% end %>
           <% end %>
