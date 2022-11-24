@@ -1,5 +1,11 @@
 <div class="container">
   <h1>Your booking has been submitted</h1>
-  <h3><%= @booking.comment %></h3>
-  <p>Your booking from <%= @booking.date_from %> to <%= @booking.date_to %> for <%= @castle.name %> has been submitted.</p>
+  <br>
+  <h4>You have booked <%= @castle.name %> <h4>
+  <p> from <%= @booking.date_from %> to <%= @booking.date_to %> </p>
+  <p> Your comment:  <%= @booking.comment %></p>
+  <br>
+  <p> Enjoy your Bouncy Castle Experience ! </p>
 </div>
+
+<%# <%= link_to "Overview of all your Bouncy Castle's  ", dashboard_path, class: "btn btn-primary"  %> %>

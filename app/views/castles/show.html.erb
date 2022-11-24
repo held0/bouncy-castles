@@ -1,7 +1,8 @@
 <div class="container">
   <h1><%= @castle.name %></h1>
   <p>Location: <%= @castle.location %></p>
-  <p>Price: <%= @castle.price %>€</p>
+  <p> <%= @castle.description %> </p>
+  <p>Price: <%= @castle.price %>€ </p>
 
   <div class="row">
     <div class="col-lg-6">
@@ -17,11 +18,17 @@
       data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
     </div>
   </div>
-
 </div>
 
-<div class="container">
-  <div class= "d-inline">
-    <%= link_to "Book Now", new_castle_booking_path(@castle), class: "btn btn-primary"  %>
+<div class="container mt-5">
+  <div class="bg-white rounded p-3 shadow">
+    <h2> Book <%= @castle.name %> now </h2>
+    <br>
+    <%= simple_form_for [@castle, @booking] do |f| %>
+      <%= f.input :comment %>
+      <%= f.input :date_from %>
+      <%= f.input :date_to %>
+      <%= f.submit class: "btn btn-primary" %>
+    <% end %>
   </div>
 </div>
