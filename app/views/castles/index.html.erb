@@ -1,27 +1,36 @@
-<div class="banner">
-  <div class="container">
-    <h1>Weclome to Bouncy Castles</h1>
-    <h3> Stop adulting and jump into the fun zone! </h3>
-    <p>Book your bouncy castle today </p>
+<div class="d-flex">
+  <div class="banner">
+    <div class="container">
+      <h1>Weclome to Bouncy Castles</h1>
+      <h3> Stop adulting and jump into the fun zone! </h3>
+      <p>Book your bouncy castle today </p>
+    </div>
+    <div class="d-inline">
+      <%= link_to 'Rent out your bouncy castle', new_castle_path, class: "btn btn-primary" %>
+    </div>
   </div>
-  <div class="d-inline">
-    <%= link_to 'Rent out your bouncy castle', new_castle_path, class: "btn btn-primary" %>
+  <div style="width: 55%; overflow-x:hidden"
+    data-controller="map"
+    data-map-markers-value="<%= @markers.to_json %>"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
 </div>
 
-<div class="container">
-  <div class="row">
-    <% @castles.each do |castle| %>
-      <div class="col-4">
-      <%= link_to(castle_path(castle)) do %>
-        <div class="castle castle-overview">
-          <div class="castle-img">
-            <%= cl_image_tag(castle.photos[0].key)%>
+  <div class="container">
+
+    <div class="row">
+      <% @castles.each do |castle| %>
+        <div class="col-4">
+        <%= link_to(castle_path(castle)) do %>
+          <div class="castle castle-overview">
+            <div class="castle-img">
+              <%= cl_image_tag(castle.photos[0].key)%>
+            </div>
+            <h4><%= link_to castle.name, castle_path(castle), class: 'castle-link'%></h4>
           </div>
-          <h4><%= link_to castle.name, castle_path(castle), class: 'castle-link'%></h4>
+        <%end%>
         </div>
-      <%end%>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
+
   </div>
-</div>
