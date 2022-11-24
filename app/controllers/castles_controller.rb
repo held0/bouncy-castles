@@ -24,6 +24,7 @@ class CastlesController < ApplicationController
 
       }
     end
+    @booking = Booking.new
   end
 
   def new
@@ -39,6 +40,23 @@ class CastlesController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
+
+  def edit
+    @castle = Castle.find(params[:id])
+  end
+
+  def update
+    @castle = Castle.find(params[:id])
+    @castle.update(castle_params)
+    redirect_to castle_path(@castle)
+  end
+
+  def destroy
+    castle = Castle.find(params[:id])
+    castle.destroy
+    redirect_to dashboard_path
+  end
+
 
   private
 
