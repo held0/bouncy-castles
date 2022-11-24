@@ -7,6 +7,7 @@ class CastlesController < ApplicationController
 
   def show
     @castle = Castle.find(params[:id])
+    @booking = Booking.new
 
     @marker = {
         lat: @castle.latitude,
