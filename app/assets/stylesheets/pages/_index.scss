@@ -6,23 +6,46 @@ body {
   background: #fff;
 }
 
-.container {
-  width: 80%;
-  margin: 35px auto;
-  padding: 35px;
+.main_copy {
+  margin: 65px;
+  align-items: center;
+  color: #fff;
 }
 
+.d-flex {
+  background-color: #cc3399;
+  justify-content: space-between;
+}
 
-.banner {
-  background: url('https://mocoshow.com/wp-content/uploads/2022/08/5B7E634D-4E64-4E97-B185-96C236CCCB53.jpeg');
-  height: 450px;
-  background-size: cover;
+.btn-primary {
+  padding: 12px 18px;
+  background-color: #fff;
+  color: #cc3399;
+  font-weight: bold;
+  border: none;
+  border-radius: 15px;
+}
+
+.index_map {
+  height: 365px;
+  border-radius: 10px;
+}
+
+.map_and_search {
+  margin: 25px;
   display: flex;
   flex-direction: column;
+}
+
+.search_text_and_form{
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
+}
+.search_text_and_form p {
+  margin: 0;
   color: #fff;
-  text-shadow: 0px 0px 50px black;
 }
 
 .banner-full {
@@ -32,6 +55,8 @@ body {
 h1 {
   font-size: 52px;
   font-weight: 600;
+  font-family: 'Pacifico', cursive;
+  font-weight: 100;
 }
 
 h2 {
@@ -41,7 +66,13 @@ h2 {
 
 h3 {
   font-size: 26px;
-  font-weight: 400;
+  font-weight: 100;
+  font-family: 'Pacifico', cursive;
+  margin-bottom: 5px;
+}
+
+p {
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
 }
 
 

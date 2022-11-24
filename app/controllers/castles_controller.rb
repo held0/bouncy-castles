@@ -6,7 +6,9 @@ class CastlesController < ApplicationController
     @markers = @castles.geocoded.map do |castle|
       {
         lat: castle.latitude,
-        lng: castle.longitude
+        lng: castle.longitude,
+        info_window: render_to_string(partial: "info_window", locals: {castle: castle})
+
       }
     end
   end
@@ -17,7 +19,9 @@ class CastlesController < ApplicationController
     @marker = castle_arr.map do |castle|
       {
         lat: castle.latitude,
-        lng: castle.longitude
+        lng: castle.longitude,
+        info_window: render_to_string(partial: "info_window", locals: {castle: castle})
+
       }
     end
   end

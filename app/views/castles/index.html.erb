@@ -1,22 +1,31 @@
 <div class="d-flex">
-  <div class="banner">
-    <div class="container">
-      <h1>Weclome to Bouncy Castles</h1>
-      <h3> Stop adulting and jump into the fun zone! </h3>
-      <p>Book your bouncy castle today </p>
-    </div>
+  <div class="main_copy">
+    <h3>Welcome to</h3>
+    <h1>Bouncy Castles</h1>
+    <p> Stop adulting and jump into the fun zone!</p>
+    <p>Book your bouncy castle today or</p>
     <div class="d-inline">
       <%= link_to 'Rent out your bouncy castle', new_castle_path, class: "btn btn-primary" %>
     </div>
   </div>
-  <div style="width: 55%; overflow-x:hidden"
-    data-controller="map"
-    data-map-markers-value="<%= @markers.to_json %>"
-    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  <div class="map_and_search">
+    <div class="index_map"
+      data-controller="map"
+      data-map-markers-value="<%= @markers.to_json %>"
+      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+
+    <div class="search_text_and_form">
+      <p>Find bouncy castles close to you!</p>
+      <form class="input-group w-50 right-align" role="search">
+            <input class="form-control" type="search" placeholder="Your location" aria-label="Search">
+            <button type="submit" class="btn btn-outline-secondary">Search</button>
+      </form>
+    </div>
   </div>
 </div>
 
-  <div class="container">
+<div class="container">
 
     <div class="row">
       <% @castles.each do |castle| %>
@@ -33,4 +42,4 @@
       <% end %>
     </div>
 
-  </div>
+</div>
