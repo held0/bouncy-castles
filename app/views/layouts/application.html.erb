@@ -7,6 +7,9 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
     <link href="https://api.mapbox.com/mapbox-gl-js/v2.11.0/mapbox-gl.css" rel="stylesheet">
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.11.0/mapbox-gl.js"></script>
@@ -31,12 +34,6 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarScroll">
-
-        <form class="input-group m-auto w-50" role="search">
-          <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-          <button type="submit" class="btn btn-outline-secondary">Search</button>
-        </form>
-
         <ul class="navbar-nav mb-2 mb-lg-0">
           <% if !current_user && !current_page?(new_user_session_path) %>
             <li class="nav-item">

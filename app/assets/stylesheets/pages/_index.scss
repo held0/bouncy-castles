@@ -6,23 +6,100 @@ body {
   background: #fff;
 }
 
-.container {
-  width: 80%;
-  margin: 35px auto;
-  padding: 35px;
+.navbar-collapse {
+  display: flex;
+  justify-content: flex-end;
 }
 
+.main_copy {
+  display: flex;
+  margin: 65px;
+  color: #fff;
+  flex-direction: column;
+  justify-content: center;
+}
 
-.banner {
-  background: url('https://mocoshow.com/wp-content/uploads/2022/08/5B7E634D-4E64-4E97-B185-96C236CCCB53.jpeg');
-  height: 450px;
-  background-size: cover;
+.d-flex {
+  background: rgb(204,51,153);
+  background: linear-gradient(45deg, rgba(204,51,153,1) 0%, rgba(153,51,153,1) 100%);
+  justify-content: space-between;
+}
+
+.btn-primary {
+  margin-top: 25px;
+  padding: 12px 18px;
+  color: white;
+  background-color: transparent;
+  font-weight: bold;
+  border: 1px solid white;
+  border-radius: 15px;
+}
+
+.btn-primary:hover {
+  background-color: #fff;
+  color: #cc3399;
+  border-color: white;
+}
+
+.index_map {
+  height: 365px;
+  border-radius: 10px;
+}
+
+.map_and_search {
+  width: 725px;
+  margin: 25px;
   display: flex;
   flex-direction: column;
+}
+
+.search_text_and_form{
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
+}
+.search_text_and_form p {
+  margin: 0;
   color: #fff;
-  text-shadow: 0px 0px 50px black;
+  letter-spacing: .1rem;
+}
+
+.d-inline {
+  border-color: #fff;
+}
+
+.btn-outline-secondary {
+  color: #fff;
+  border-color: #fff;
+  transition: 0.5s;
+}
+
+.btn-outline-secondary:hover {
+  background-color: #F4F4F4;
+  color: #cc3399;
+  border-color: #ced4da;
+}
+
+.form-control {
+  background-color: #ffccff;
+  color: #cc3399;
+  border-color: #ffccff;
+}
+
+.form-control::placeholder {
+  color: #cc3399;
+}
+
+.form-control:focus {
+  border-color: #ffccff !important;
+  box-shadow: none;
+  background-color: #ffccff;
+}
+
+.form-control:active {
+  border: none;
+  box-shadow: none;
 }
 
 .banner-full {
@@ -30,8 +107,10 @@ body {
 }
 
 h1 {
-  font-size: 52px;
-  font-weight: 600;
+  font-size: 65px;
+  font-family: 'Pacifico', cursive;
+  margin-bottom: 30px;
+  font-weight: 100;
 }
 
 h2 {
@@ -40,10 +119,16 @@ h2 {
 }
 
 h3 {
-  font-size: 26px;
-  font-weight: 400;
+  font-size: 32px;
+  font-weight: 100;
+  font-family: 'Pacifico', cursive;
+  margin-bottom: 5px;
 }
 
+p {
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  margin: 0;
+}
 
 .castle {
   border: 1px solid rgb(236, 236, 236);
