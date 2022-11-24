@@ -3,6 +3,9 @@ class CastlesController < ApplicationController
 
   def index
     @castles = Castle.all
+    # PgSearch::Multisearch.rebuild()
+
+    @results = PgSearch.multisearch(params[:query])
   end
 
   def show
