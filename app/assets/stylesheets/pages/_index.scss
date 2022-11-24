@@ -75,5 +75,16 @@ h3 {
   width: 100%;
   height: 225px;
   object-fit: cover;
-  margin-bottom: 25px;
+  margin-bottom: 24px;
+}
+
+.castle-confirm-img {
+  width: 640px;
+  object-fit: cover;
+}
+
+.anchorbutton {
+  position: absolute;
+  right: 40px;
+  top: 48px;
 }
