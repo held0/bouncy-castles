@@ -20,7 +20,8 @@ body {
 }
 
 .d-flex {
-  background-color: #cc3399;
+  background: rgb(204,51,153);
+  background: linear-gradient(45deg, rgba(204,51,153,1) 0%, rgba(153,51,153,1) 100%);
   justify-content: space-between;
 }
 
