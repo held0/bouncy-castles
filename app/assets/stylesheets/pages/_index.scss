@@ -19,26 +19,10 @@ body {
   justify-content: center;
 }
 
-.d-flex {
+.main-banner {
   background: rgb(204,51,153);
   background: linear-gradient(45deg, rgba(204,51,153,1) 0%, rgba(153,51,153,1) 100%);
   justify-content: space-between;
-}
-
-.btn-primary {
-  margin-top: 25px;
-  padding: 12px 18px;
-  color: white;
-  background-color: transparent;
-  font-weight: bold;
-  border: 1px solid white;
-  border-radius: 15px;
-}
-
-.btn-primary:hover {
-  background-color: #fff;
-  color: #cc3399;
-  border-color: white;
 }
 
 .index_map {
@@ -65,40 +49,53 @@ body {
   letter-spacing: .1rem;
 }
 
-.d-inline {
-  border-color: #fff;
-}
-
-.btn-outline-secondary {
+.main-cta {
+  margin-top: 25px;
   color: #fff;
+  font-weight: bold;
+  background-color: transparent;
   border-color: #fff;
   transition: 0.5s;
 }
 
-.btn-outline-secondary:hover {
+.main-cta:hover {
   background-color: #F4F4F4;
   color: #cc3399;
-  border-color: #ced4da;
+  border-color: #fff;
 }
 
-.form-control {
+.find-castles {
+  color: #fff;
+  border-color: #fff;
+  border-left: none;
+  transition: 0.5s;
+}
+
+.find-castles:hover {
+  background-color: #F4F4F4;
+  color: #cc3399;
+  border-color: #fff;
+}
+
+.location_search {
   background-color: #ffccff;
   color: #cc3399;
-  border-color: #ffccff;
+  border-color: #fff;
+  border-right: none;
 }
 
-.form-control::placeholder {
+.location_search::placeholder {
   color: #cc3399;
 }
 
-.form-control:focus {
-  border-color: #ffccff !important;
+.location_search:focus {
+  border-color: #fff !important;
   box-shadow: none;
   background-color: #ffccff;
 }
 
-.form-control:active {
-  border: none;
+.location_search:active {
+  border-color: #fff;
   box-shadow: none;
 }
 
