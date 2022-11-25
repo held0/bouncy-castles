@@ -29,7 +29,7 @@ img_array = ["https://www.alansbouncycastles.com/wp-content/uploads/2015/03/mari
   castle = Castle.new(
     name: Faker::Name.name,
     location: "Fraunhoferstraße 6 80469 München Bavaria",
-    description: Faker::TvShows::SouthPark.quote,
+    description: Faker::Movies::HarryPotter.quote,
     price: Faker::Number.decimal(l_digits: 3, r_digits: 3),
     user_id: User.last.id
   )
