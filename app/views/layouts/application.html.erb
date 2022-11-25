@@ -21,7 +21,7 @@
     <div class="container-fluid">
 
         <%= link_to root_path do %>
-          <%= image_tag "Castle-Logo.png", width: 45, height: 39, alt: "Bouncy castle" %>
+          <%= image_tag "Castle-Logo.png", width: 45, height: 39, alt: "Bouncy castle", class: "ms-2" %>
         <% end %>
 
       <ul class="navbar-nav mb-2 mb-lg-0">
@@ -41,24 +41,46 @@
             </li>
           <% end %>
 
-          <% if current_user %>
-            <li class="nav-item">
-              <%= link_to "Dashboard", dashboard_path, class: "nav-link" %>
-            </li>
-          <% end %>
-
-          <% if current_user %>
-            <li class="nav-item">
-              <%= link_to "Logout", destroy_user_session_path, data: { "turbo-method": :delete }, class: "nav-link" %>
-            </li>
-          <% end %>
-
           <% if !current_user && !current_page?(new_user_registration_path) %>
             <li class="nav-item">
               <%= link_to "Sign up", new_user_registration_path, class: "nav-link" %>
             </li>
           <% end %>
 
+          <% if current_user %>
+            <li class="nav-item dropdown">
+
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <% if current_user.avatar.attached? %>
+                  <%= image_tag current_user.avatar, class: "avatar", width: 40, height: 40 %>
+                <% else %>
+                  <%= image_tag "avatar1.png", class: "avatar", width: 60 %>
+                <% end %>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end">
+
+                <li class="nav-item">
+                  <%= link_to "Home", root_path, class: "dropdown-item px-3 text-muted" %>
+                </li>
+
+                <li class="nav-item">
+                  <%= link_to "Dashboard", dashboard_path, class: "dropdown-item px-3 text-muted" %>
+                </li>
+                
+                <li class="nav-item">
+                  <%= link_to "Edit Photo", avatar_edit_path, class: "dropdown-item px-3 text-muted" %>
+                </li>
+
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+
+                  <li class="nav-item">
+                    <%= link_to "Logout", destroy_user_session_path, data: { "turbo-method": :delete }, class: "dropdown-item px-3 text-muted" %>
+                  </li>
+              </ul>
+            </li>
+          <% end %>
         </ul>
       </div>
     </div>
@@ -78,7 +100,9 @@
     </div>
   <% end %>
 
-  <%= yield %>
+  <div style="min-height: 63vh">
+    <%= yield %>
+  </div>
 
   <footer class="py-3 my-4">
     <ul class="nav justify-content-center border-bottom pb-3 mb-3">
