@@ -1,18 +1,34 @@
 <div class="container">
-  <h2>Booking submitted!</h2>
-  <div class="confirm-container">
-    <%= cl_image_tag(@castle.photos[0].key)%>
-    <div class="confirm-content ml-2">
-      <h4>You booked: <h4>
-      <br>
-      <p> <%= @castle.name %> <p>
-      <p> from <%= @booking.date_from %> </p>
-      <p> to <%= @booking.date_to %> </p>
-      <br>
-      <br>
-      <br>
-      <p> Enjoy the Bouncy Castle Experience ! </p>
-      <%= link_to "Go to all your Bookings", dashboard_path, class: "btn btn-primary my-3" %>
+  <h2 class="my-3">Booking submitted! ✅</h2>
+  <div class="card shadow my-4">
+    <div class="row">
+      <div class="col">
+        <%= cl_image_tag(@castle.photos[0].key, class: "img-fluid rounded-start")%>
+      </div>
+      <div class="col">
+        <div class="card-body">
+          <h5 class="card-title fw-bold"><%= @castle.name %></h5>
+
+          <table class="table">
+            <tbody>
+              <tr>
+                <th>To</th>
+                <td><i class="fa-regular fa-calendar"></i> <%= @booking.date_to %></td>
+              </tr>
+              <tr>
+                <th>From</th>
+                <td><i class="fa-regular fa-calendar"></i> <%= @booking.date_from %> </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p class="card-text fw-light">Enjoy the Bouncy Castle Experience !</p>
+        </div>
+      </div>
     </div>
   </div>
+
+<%= link_to dashboard_path, class: "btn btn-primary my-3 booking-button"  do%>
+  <i class="fa-solid fa-arrow-left"></i> Go to all your Bookings
+<% end %>
 </div>
