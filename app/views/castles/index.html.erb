@@ -1,10 +1,10 @@
-<div class="d-flex">
+<div class="d-flex main-banner">
   <div class="main_copy">
     <h3>Welcome to</h3>
     <h1>Bouncy Castles</h1>
     <p> Stop adulting and jump into the fun zone!</p>
     <p>Book your bouncy castle today or</p>
-    <div class="d-inline">
+    <div class="d-inline main-cta">
       <%= link_to 'Rent out your bouncy castle', new_castle_path, class: "btn btn-primary" %>
     </div>
   </div>
@@ -17,8 +17,8 @@
 
     <div class="search_text_and_form">
       <p>Find bouncy castles close to you!</p>
-      <form class="input-group w-50 right-align" role="search">
-            <input class="form-control" type="search" placeholder="Your location" aria-label="Search">
+      <form class="input-group w-50 right-align form_under_map" role="search">
+            <input class="form-control location_search" type="search" placeholder="Your location" aria-label="Search">
             <button type="submit" class="btn btn-outline-secondary">Search</button>
       </form>
     </div>
