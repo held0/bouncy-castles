@@ -1,4 +1,4 @@
-<div class="container">
+xx<div class="container">
   <div class="bg-white rounded p-3 shadow">
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name),
         data: {turbo: false}) do |f| %>
@@ -9,6 +9,10 @@
                     required: true,
                     autofocus: true,
                     input_html: { autocomplete: "email" }%>
+        <%= f.input :first_name,
+                    required: true%>
+        <%= f.input :last_name,
+                    required: true%>
         <%= f.input :password,
                     required: true,
                     hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
@@ -16,11 +20,11 @@
         <%= f.input :password_confirmation,
                     required: true,
                     input_html: { autocomplete: "new-password" } %>
-        <%= f.input :photo, as: :file %>
+        <%= f.input :avatar, as: :file %>
       </div>
 
       <div class="form-actions d-grid gap-2">
-        <%= f.button :submit, "Sign up", class: "btn btn-primary fw-semibold" %>
+        <%= f.button :submit, "Sign up", class: "btn btn-primary fw-semibold login" %>
       </div>
     <% end %>
   </div>

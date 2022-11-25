@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="bg-white rounded p-3 shadow">
+  <div class="bg-white rounded p-3 shadow m-5">
     <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name),
         data: {turbo: false}) do |f| %>
 
@@ -15,7 +15,7 @@
       </div>
 
       <div class="form-actions d-grid gap-2">
-        <%= f.button :submit, "Log in", class: "btn btn-primary fw-semibold" %>
+        <%= f.button :submit, "Log in", class: "btn btn-primary fw-semibold login" %>
       </div>
     <% end %>
   </div>

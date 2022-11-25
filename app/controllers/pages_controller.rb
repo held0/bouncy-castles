@@ -6,4 +6,9 @@ class PagesController < ApplicationController
     @incomming_bookings = Booking.where(castle: @mycastles).and(Booking.where.not(user: current_user))
     @mybookings = Booking.where(user: current_user)
   end
+
+  def richlist
+    @castles = Castle.all
+    @users = User.all
+  end
 end

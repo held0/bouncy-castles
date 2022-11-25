@@ -1,27 +1,28 @@
-<div class="position-relative container">
-  <div>
-    <h1> <%= @castle.name %></h1>
-    <p>Location: <%= @castle.location %></p>
-    <p> <%= @castle.description %> </p>
-    <p>Price: <%= @castle.price %>€ </p>
-  </div>
-
-  <div class="row">
-    <div class="col-lg-6">
-      <% @castle.photos.each do |photo| %>
-        <%= cl_image_tag photo.key,
-            width: 400, height: 300, crop: :fill %>
-      <% end %>
-    </div>
-    <div class="col-lg-6">
-      <div style="width: 582px; height: 300px;"
-      data-controller="map"
-      data-map-markers-value="<%= @marker.to_json %>"
-      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+<div class="container">
+  <div class="card shadow my-4">
+    <div class="row">
+      <div class="col">
+        <%= cl_image_tag(@castle.photos[0].key, class: "img-fluid rounded-start")%>
+      </div>
+      <div class="col">
+        <div class="card-body">
+          <h3 class="card-title fw-bold my-3 ft-size-big"><%= @castle.name %></h3>
+          <h5 class="card-text fw-light my-2"><%= @castle.description %></h5>
+          <h5>Price: <%= @castle.price %> 💎💎💎 </h5>
+          <br>
+          <div class="col-lg-6">
+            <div style="width: 582px; height: 300px;"
+            data-controller="map"
+            data-map-markers-value="<%= @marker.to_json %>"
+            data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
+
 
 <div class="container mt-5" id="booking">
   <div class="bg-white rounded p-3 shadow">
@@ -29,8 +30,8 @@
     <br>
     <%= simple_form_for [@castle, @booking] do |f| %>
       <%= f.input :comment %>
-      <%= f.input :date_from %>
-      <%= f.input :date_to %>
+      <%= f.input :date_from, as: :date, html5: true %>
+      <%= f.input :date_to, as: :date, html5: true %>
       <%= f.submit class: "btn btn-primary booking-button", value:"Book this castle"%>
     <% end %>
   </div>
