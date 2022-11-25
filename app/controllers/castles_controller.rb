@@ -27,7 +27,7 @@ class CastlesController < ApplicationController
         lat: castle.latitude,
         lng: castle.longitude,
         info_window: render_to_string(partial: "info_window", locals: {castle: castle}),
-        image_url: helpers.asset_url("Castle-Logo")
+        image_url: helpers.asset_url("Castle-Logo.png")
       }
     end
     @booking = Booking.new
