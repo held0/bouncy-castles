@@ -6,8 +6,6 @@
     <p>Price: <%= @castle.price %>€ </p>
   </div>
 
-<%= link_to "Book Now", castle_path(anchor: 'booking'), class: "btn btn-primary anchorbutton"  %>
-
   <div class="row">
     <div class="col-lg-6">
       <% @castle.photos.each do |photo| %>
@@ -33,7 +31,7 @@
       <%= f.input :comment %>
       <%= f.input :date_from %>
       <%= f.input :date_to %>
-      <%= f.submit class: "btn btn-primary" %>
+      <%= f.submit class: "btn btn-primary booking-button", value:"Book this castle"%>
     <% end %>
   </div>
 </div>

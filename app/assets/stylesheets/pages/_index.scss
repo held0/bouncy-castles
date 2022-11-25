@@ -37,6 +37,17 @@ body {
   flex-direction: column;
 }
 
+.booking-button {
+  margin-top: 15px;
+  color: #cc3399;
+  background-color: #ffccff;
+  border: none
+}
+
+.booking-button:hover {
+  background-color: #cc3399;
+}
+
 .search_text_and_form{
   margin-top: 20px;
   display: flex;
@@ -53,6 +64,7 @@ body {
   margin-top: 25px;
   color: #fff;
   font-weight: bold;
+  letter-spacing: .07rem;
   background-color: transparent;
   border-color: #fff;
   transition: 0.5s;
@@ -62,6 +74,19 @@ body {
   background-color: #F4F4F4;
   color: #cc3399;
   border-color: #fff;
+}
+
+.forgot-password {
+  margin-top: 30px;
+  border-color: #cc3399;
+  background-color: transparent;
+  color: #cc3399;
+}
+
+.forgot-password:hover {
+  background-color: #cc3399;
+  border-color: #cc3399;
+  color: #fff;
 }
 
 .find-castles {
