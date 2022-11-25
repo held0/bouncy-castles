@@ -25,22 +25,6 @@ body {
   justify-content: space-between;
 }
 
-.btn-primary {
-  margin-top: 25px;
-  padding: 12px 18px;
-  color: white;
-  background-color: transparent;
-  font-weight: bold;
-  border: 1px solid white;
-  border-radius: 15px;
-}
-
-.btn-primary:hover {
-  background-color: #fff;
-  color: #cc3399;
-  border-color: white;
-}
-
 .index_map {
   height: 365px;
   border-radius: 10px;
@@ -66,17 +50,28 @@ body {
 }
 
 .main-cta {
+  margin-top: 25px;
+  color: #fff;
+  font-weight: bold;
+  background-color: transparent;
+  border-color: #fff;
+  transition: 0.5s;
+}
+
+.main-cta:hover {
+  background-color: #F4F4F4;
+  color: #cc3399;
   border-color: #fff;
 }
 
-.btn-outline-secondary {
+.find-castles {
   color: #fff;
   border-color: #fff;
   border-left: none;
   transition: 0.5s;
 }
 
-.btn-outline-secondary:hover {
+.find-castles:hover {
   background-color: #F4F4F4;
   color: #cc3399;
   border-color: #fff;
