@@ -1,6 +1,6 @@
 <div class="d-grid gap-2 col-6 mx-auto">
   <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
-    <%= link_to "Forgot your password?", new_password_path(resource_name), class: "btn btn-light" %><br />
+    <%= link_to "Forgot your password?", new_password_path(resource_name), class: "btn btn-light forgot-password" %><br />
   <% end %>
 </div>
 

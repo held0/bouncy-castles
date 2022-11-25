@@ -1,5 +1,8 @@
 <div class="container">
-  <h1>My castles</h1>
+  <div class="d-flex align-items-center">
+    <h3 class="my-5">My castles</h3>
+    <%= link_to "Create new castle", new_castle_path, class: 'btn booking-button mx-5'%>
+  </div>
   <div class="row">
     <% @mycastles.each do |castle| %>
       <div class="col-4">
@@ -20,8 +23,8 @@
       </div>
     <% end %>
   </div>
-  <% if @incomming_bookings.one? { |b| b.accepted == false } %>
-  <h1 class="my-5">Pending bookings</h1>
+  <% if @incomming_bookings.any? { |b| b.accepted == false } %>
+  <h3 class="my-5">Pending bookings</h3>
   <% end %>
   <% @incomming_bookings.each do |booking| %>
     <% if booking.accepted == false %>
@@ -40,7 +43,7 @@
   <% end %>
 
   <% if @incomming_bookings.any? { |b| b.accepted } %>
-    <h1 class="my-5">Accepted bookings</h1>
+    <h3 class="my-5">Accepted bookings</h3>
   <% end %>
   <% @incomming_bookings.each do |booking| %>
     <% if booking.accepted %>
@@ -54,28 +57,30 @@
           <p><small><%= booking.date_from %></small> to <small><%= booking.date_to %></small> for <small><%= booking.castle.name %></small></p>
           <p><%= booking.comment %></p>
         </div>
-        <p class="btn btn-light disabled">Confirmed</p>
+        <p class="btn btn-success disabled">Confirmed</p>
       </div>
     <% end %>
   <% end %>
 
-  <% if @mybookings.any? { |b| b.accepted } %>
-    <h1 class="my-5">My own bookings</h1>
+  <% if @mybookings.size > 0 %>
+    <h3 class="my-5">My own bookings</h3>
   <% end %>
   <% @mybookings.each do |booking| %>
-    <% if booking.accepted %>
-      <div class="notification shadow">
-        <% if booking.user.avatar.key %>
-          <%= image_tag booking.user.avatar, class: "avatar-large" %>
-        <% else %>
-          <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large" />
-        <% end %>
-        <div class="notification-content">
-          <p><small><%= booking.date_from %></small> to <small><%= booking.date_to %></small> for <small><%= booking.castle.name %></small></p>
-          <p><%= booking.comment %></p>
-        </div>
-        <p class="btn btn-light disabled">Waiting for confirmation</p>
+    <div class="notification shadow">
+      <% if booking.user.avatar.key %>
+        <%= image_tag booking.user.avatar, class: "avatar-large" %>
+      <% else %>
+        <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large" />
+      <% end %>
+      <div class="notification-content">
+        <p><small><%= booking.date_from %></small> to <small><%= booking.date_to %></small> for <small><%= booking.castle.name %></small></p>
+        <p><%= booking.comment %></p>
       </div>
-    <% end %>
+      <% if !booking.accepted %>
+      <p class="btn btn-light disabled">Waiting for confirmation</p>
+      <% else %>
+      <p class="btn btn-success disabled">Booking confirmed</p>
+      <% end %>
+    </div>
   <% end %>
 </div>
