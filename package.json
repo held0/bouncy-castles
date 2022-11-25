@@ -5,7 +5,9 @@
     "@hotwired/stimulus": "^3.1.1",
     "@hotwired/turbo-rails": "^7.2.4",
     "@popperjs/core": "^2.11.6",
-    "bootstrap": "^5.2.2",
+    "bootstrap": "^5.2.3",
+    "jquery": "^3.6.1",
+    "popper.js": "^1.16.1",
     "webpack": "^5.75.0",
     "webpack-cli": "^5.0.0"
   },
