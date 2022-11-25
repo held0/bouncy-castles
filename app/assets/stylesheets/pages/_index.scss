@@ -45,7 +45,23 @@ body {
 }
 
 .booking-button:hover {
+  color: #fff;
   background-color: #cc3399;
+}
+
+.booking-button:visited {
+  color: #fff !important;
+  background-color: #cc3399 !important;
+}
+
+.booking-button:focus {
+  color: #fff;
+  background-color: #cc3399;
+}
+
+.booking-button:active {
+  color: #fff !important;
+  background-color: #cc3399 !important;
 }
 
 .search_text_and_form{
@@ -76,6 +92,12 @@ body {
   border-color: #fff;
 }
 
+.main-cta:active {
+  background-color: #F4F4F4 !important;
+  color: #cc3399 !important;
+  border-color: #fff !important;
+}
+
 .forgot-password {
   margin-top: 30px;
   border-color: #cc3399;
@@ -87,6 +109,40 @@ body {
   background-color: #cc3399;
   border-color: #cc3399;
   color: #fff;
+}
+
+.alert-danger {
+  border-color: #cc3399 !important;
+  background-color: #ffccff !important;
+  color: #cc3399 !important;
+}
+
+.login {
+  background-color: #ffccff;
+  border-color: #ffccff;
+  color: #cc3399;
+}
+
+.login:hover {
+  background-color: #cc3399;
+  border-color: #cc3399;
+  color: #fff;
+}
+
+.form-control:focus {
+  box-shadow:#ffccff !important;
+}
+
+.login:active {
+  background-color: #cc3399 !important;
+  border-color: #cc3399 !important;
+  color: #fff !important;
+}
+
+.dropdown-item:active {
+  background-color: #cc3399;
+  border-color: #cc3399;
+  color: #fff !important;
 }
 
 .find-castles {
