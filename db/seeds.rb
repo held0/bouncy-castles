@@ -24,7 +24,7 @@ img_array = ["https://www.alansbouncycastles.com/wp-content/uploads/2015/03/mari
              "https://bouncycastlenetwork-res.cloudinary.com/image/upload/f_auto,q_auto,c_limit,w_900/be136c2b4c30a9f1888feb603968f32b",
              "https://img.freepik.com/free-photo/full-shot-kid-playing-bounce-house_23-2149551612.jpg?w=2000"]
 
-5.times do
+15.times do
   file = URI.open(img_array.sample)
   castle = Castle.new(
     name: Faker::Name.name,
