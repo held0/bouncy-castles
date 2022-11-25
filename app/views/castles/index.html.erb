@@ -19,14 +19,15 @@
       <p>Find bouncy castles close to you!</p>
       <form class="input-group w-50 right-align form_under_map" role="search">
             <input class="form-control location_search" id="query" name="query" type="search" placeholder="Your location" aria-label="Search">
-            <button type="submit" class="btn btn-outline-secondary find-castles">Search</button>
+            <button type="submit" class="btn btn-outline-secondary find-castles"><i class="fa-solid fa-magnifying-glass"></i></button>
       </form>
     </div>
   </div>
 </div>
 
-<div class="container">
+<div class=" website_bg">
 
+<div class="container">
     <div class="row">
       <% @castles.each do |castle| %>
         <div class="col-4">
@@ -41,5 +42,5 @@
         </div>
       <% end %>
     </div>
-
+</div>
 </div>
